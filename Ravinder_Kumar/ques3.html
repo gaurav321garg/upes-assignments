@@ -1,0 +1,115 @@
+<script>
+
+// author - ravinder kumar , branch - CSE IT Infrastructre management 
+
+var T,N,S,A,B,C,L=[];
+
+T=prompt("enter the number of test cases");
+
+for(var i=0;i<T;i++){
+
+
+	N=Number(prompt("enter the size of the list  L "));
+
+	for(var i=0;i<N;i++){
+
+		L[i]=Number(prompt("enter the "+ i + " number of list L"));
+		
+
+	}
+	
+	A=Number(prompt("enter the value of A"));
+	B=Number(prompt("enter the value of B"));
+	C=Number(prompt("enter the value of C"));
+
+
+	// make sure there is no space while entering the string below 
+	S=prompt("string consisting of ony A,R,M of length" + N + " (NO SPACE)");
+
+
+	var final=solve();
+
+	document.write("final list will be \n" +final);
+
+	console.log(final);
+
+}
+
+
+
+function solve(){
+
+S=S.split("");
+
+for(var i=0;i<N;i++){
+
+
+	if(S[i]=='A' || S[i]=='a'){
+
+		//add A to all numbers of L[i..N].
+
+		for(var j=i;j<N;j++){	
+
+			L[j]=L[j]+A;
+		}
+
+
+		console.log(L);
+
+
+	}
+
+	if(S[i]=='R' || S[i]=='r'){
+		
+		var j,k;
+
+		//reverse L[i...N]
+
+
+		for(j=i ,k=N-1; j<N && k> i; j++ , k-- ){
+
+			var temp;
+
+			temp=L[j];
+			L[j]=L[k];
+			L[k]=temp;
+		}
+
+
+
+		
+
+	}
+
+	if(S[i]=='M' || S[i]=='m'){
+
+		
+		//multiply B to all numbers of L[i..N].
+
+		for(var j=i;j<N;j++){
+
+			L[j]=L[j]*B;
+		}
+
+		
+
+	}
+
+
+
+
+	// for(var i=0;i<N;i++){
+
+
+	// 	L[i]=L[i] % C;
+
+	// }
+
+}
+
+
+return L;
+
+}
+
+</script>

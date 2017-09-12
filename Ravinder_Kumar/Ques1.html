@@ -1,0 +1,56 @@
+<script>
+	// author - ravinder kumar , branch - CSE IT Infrastructre management 
+  // email - yravinderkumar33@gmail.com
+  
+  
+	var i=[],d=[],c=[],x=[],y=[];
+
+	
+	var temp;
+
+	temp=prompt("enter the x,y coordinate of POINT A (seprated by a comma)");
+	
+	i=temp.split(",");
+
+
+	temp=prompt("enter the x,y coordinate of POINT B (seprated by a comma)");
+	
+	d=temp.split(",");
+
+
+	temp=prompt("enter the x,y coordinate of POINT C (seprated by a comma)");
+	
+	c=temp.split(",");
+
+
+	temp=prompt("enter the x,y coordinate of POINT X (seprated by a comma)");
+	
+	x=temp.split(",");
+
+
+	temp=prompt("enter the x,y coordinate of POINT Y (seprated by a comma)");
+	
+	y=temp.split(",");
+
+
+
+	var initial_distance=0;
+	intial_distance=Math.abs(d[1]-i[1])+Math.abs(d[0]-i[0]);
+	var max=0;
+	max=2*intial_distance;
+	var covered=Math.abs(c[0]-i[0])+Math.abs(c[1]-i[1]);
+		var  x_dis=Math.abs(c[1]-x[1])+Math.abs(c[0]-x[0])+Math.abs(d[0]-x[0])+Math.abs(d[1]-x[1]);
+		var y_dis=Math.abs(c[1]-y[1])+Math.abs(c[0]-y[0])+Math.abs(d[0]-y[0])+Math.abs(d[1]-y[1]);
+		if(covered+x_dis<=max && covered+y_dis<=max){
+			if(x_dis<y_dis){
+				document.write("<h1>final answer  <br>" + "1  </h1>");
+			}else{
+				document.write("<h1>final answer <br> "+ "2  </h1>");
+			}
+		}else{
+			document.write("<h1>final answer  <br>" + "-1 </h1>");
+		}
+
+
+
+</script>
